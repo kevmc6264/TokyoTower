@@ -1,76 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <title>&lt;model-viewer&gt; example</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- The following libraries and polyfills are recommended to maximize browser support -->
-    <!-- NOTE: you must adjust the paths as appropriate for your project -->
-
-    <!-- 💁 OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
-    <script
-      src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js"
-      defer
-    ></script>
+    <title>&lt;model-viewer&gt; template</title>
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="./styles.css" rel="stylesheet"/>
   </head>
   <body>
-    <div id="card">
-      <!-- All you need to put beautiful, interactive 3D content on your site: -->
-      <model-viewer
-        src="https://cdn.glitch.me/b33d1633-53cd-4b3a-8082-5be26a63d34e/Tokyo_Tower.glb?v=1743768358921"
-        ios-src=""
-        poster="https://cdn.glitch.global/b33d1633-53cd-4b3a-8082-5be26a63d34e/poster.webp?v=1743768339753"
-        alt="Tokyo Tower"
-        ar-modes="scene-viewer webxr quick-look"
-        shadow-intensity="1"
-        camera-controls
-        auto-rotate
-        ar
-      >
-        <button
-          class="Hotspot"
-          slot="hotspot-1"
-          data-position="27.877334202030795m 8.477936522793685m 14.424716639085274m"
-          data-normal="0.7403671535727224m 0.4180025589490131m 0.5264317036641142m"
-          data-visibility-attribute="visible"
-        >
-          <div class="HotspotAnnotation">Tokyo Tower</div></button
-        ><button
-          class="Hotspot"
-          slot="hotspot-2"
-          data-position="-22.91871596556782m 41.79060633790204m -15.339644252029276m"
-          data-normal="0.8219815992689937m -0.2399974095379485m 0.5164760341760901m"
-          data-visibility-attribute="visible"
-        >
+    <!-- <model-viewer> HTML element -->
+    <model-viewer src="Tokyo_Tower.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" camera-orbit="-2.551deg 50.62deg 203.4m" field-of-view="30deg" auto-rotate>
+      <button class="Hotspot" slot="hotspot-1" data-position="27.877334202030795m 8.477936522793685m 14.424716639085274m" data-normal="0.7403671535727224m 0.4180025589490131m 0.5264317036641142m" data-visibility-attribute="visible">
+          <div class="HotspotAnnotation">Tokyo Tower</div>
+      </button><button class="Hotspot" slot="hotspot-2" data-position="-22.91871596556782m 41.79060633790204m -15.339644252029276m" data-normal="0.8219815992689937m -0.2399974095379485m 0.5164760341760901m" data-visibility-attribute="visible">
           <div class="HotspotAnnotation">YORONIKU TOKYO AZABUDAI HILLS</div>
-        </button>
-      </model-viewer>
-      <section class="attribution">
-        <span>
-          <h1>Tokyo Tower</h1>
-        </span>
-        <a
-          class="cc"
-          href="https://immersivetechsolutions.co.uk/"
-          target="_blank"
-        >
-          <img
-            src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
-          />
-        </a>
-      </section>
-    </div>
-
+      </button>
+      <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+      </div>
+      <button slot="ar-button" id="ar-button">
+          View in your space
+      </button>
+      <div id="ar-prompt">
+          <img src="ar_hand_prompt.png">
+      </div>
+    </model-viewer>  
     <script src="script.js"></script>
     <!-- Loads <model-viewer> for browsers: -->
-    <script
-      type="module"
-      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
-    ></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
   </body>
 </html>
-https://cdn.glitch.me/b33d1633-53cd-4b3a-8082-5be26a63d34e/TokyoTower.usdc?v=1743781224847
