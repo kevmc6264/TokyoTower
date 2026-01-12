@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <title>Tokyo Tower – 3D & AR Viewer</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 
-  <!-- Improves keyboard / focus handling -->
+  <!-- Focus-visible polyfill -->
   <script
     src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js"
     defer>
@@ -26,22 +26,18 @@
 
   <model-viewer
     src="https://pub-c133242e36144d14be3d01d2b0f26964.r2.dev/Tokyo_Tower.glb"
-    src="https://pub-c133242e36144d14be3d01d2b0f26964.r2.dev/TokyoTower.usdc"
-   
     alt="Tokyo Tower 3D model"
 
     camera-controls
-    interaction-prompt="auto"
     auto-rotate
+    interaction-prompt="auto"
 
     ar
-    ar-modes="scene-viewer webxr quick-look"
+    ar-modes="webxr scene-viewer quick-look"
 
     tone-mapping="neutral"
     shadow-intensity="1"
-    camera-orbit="-313.6deg 64.34deg 203.4m"
-    field-of-view="30deg"
-  >
+    field-of-view="30deg">
 
     <!-- Hotspot 1 -->
     <button
@@ -67,7 +63,10 @@
 
   <section class="attribution">
     <h1>Tokyo Tower</h1>
-    <a href="https://immersivetechsolutions.co.uk/" target="_blank" rel="noopener">
+    <a
+      href="https://immersivetechsolutions.co.uk/"
+      target="_blank"
+      rel="noopener">
       <img
         src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
         alt="Creative Commons">
