@@ -19,7 +19,8 @@
   </head>
   <body>
 
-    <model-viewer
+    <model-viewer src="Tokyo_Tower.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" auto-rotate camera-orbit="-313.6deg 64.34deg 203.4m" field-of-view="30deg">
+    <div class="progress-bar hide" slot="progress-bar">
       src="https://pub-c133242e36144d14be3d01d2b0f26964.r2.dev/Tokyo_Tower.glb"
 
       poster="https://pub-c133242e36144d14be3d01d2b0f26964.r2.dev/Tokyo.jpeg"
@@ -31,18 +32,6 @@
       interaction-prompt="auto"
       ar
       >
-
-
-      <model-viewer src="Tokyo_Tower.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" auto-rotate camera-orbit="-313.6deg 64.34deg 203.4m" field-of-view="30deg">
-    <div class="progress-bar hide" slot="progress-bar">
-        <div class="update-bar"></div>
-    </div>
-    <button slot="ar-button" id="ar-button">
-        View in your space
-    </button>
-    <div id="ar-prompt">
-        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-    </div>
 </model-viewer>
 
 
