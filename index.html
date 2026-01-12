@@ -1,82 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>&lt;model-viewer&gt; example</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <meta charset="utf-8" />
+  <title>Tokyo Tower – 3D & AR Viewer</title>
 
-    <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- The following libraries and polyfills are recommended to maximise browser support -->
-    <!-- NOTE: you must adjust the paths as appropriate for your project -->
+  <link rel="stylesheet" href="style.css" />
 
-    <!-- 💁 OPTIONAL: The:focus-visible polyfill removes the focus ring for some input types -->
-    <script
-      src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js"
-      defer
-    ></script>
-  </head>
-  <body>
+  <script
+    src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js"
+    defer>
+  </script>
+</head>
 
-    <model-viewer src="Tokyo_Tower.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1" auto-rotate camera-orbit="-313.6deg 64.34deg 203.4m" field-of-view="30deg">
-    <div class="progress-bar hide" slot="progress-bar">
-      src="https://pub-c133242e36144d14be3d01d2b0f26964.r2.dev/Tokyo_Tower.glb"
+<body>
 
-      poster="https://pub-c133242e36144d14be3d01d2b0f26964.r2.dev/Tokyo.jpeg"
-      alt="Tokyo Tower 3D model"
-      ar-modes="scene-viewer webxr quick-look"
-      shadow-intensity="1"
-      camera-controls
-      auto-rotate
-      interaction-prompt="auto"
-      ar
-      >
-</model-viewer>
+  <model-viewer
+    src="https://pub-c133242e36144d14be3d01d2b0f26964.r2.dev/Tokyo_Tower.glb"
+    poster="https://pub-c133242e36144d14be3d01d2b0f26964.r2.dev/Tokyo.jpeg"
+    alt="Tokyo Tower 3D model"
 
+    camera-controls
+    interaction-prompt="auto"
+    auto-rotate
 
-      
+    ar
+    ar-modes="scene-viewer webxr quick-look"
 
-      
-        <button
-          class="Hotspot"
-          slot="hotspot-1"
-          data-position="27.877334202030795m 8.477936522793685m 14.424716639085274m"
-          data-normal="0.7403671535727224m 0.4180025589490131m 0.5264317036641142m"
-          data-visibility-attribute="visible"
-        >
-          <div class="HotspotAnnotation">Tokyo Tower</div></button
-        ><button
-          class="Hotspot"
-          slot="hotspot-2"
-          data-position="-22.91871596556782m 41.79060633790204m -15.339644252029276m"
-          data-normal="0.8219815992689937m -0.2399974095379485m 0.5164760341760901m"
-          data-visibility-attribute="visible"
-        >
-          <div class="HotspotAnnotation">YORONIKU TOKYO AZABUDAI HILLS</div>
-        </button>
-      </model-viewer>
-      <section class="attribution">
-        <span>
-          <h1>Tokyo Tower</h1>
-        </span>
-        <a
-          class="cc"
-          href="https://immersivetechsolutions.co.uk/"
-          target="_blank"
-        >
-          <img
-            src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
-          />
-        </a>
-      </section>
-    </div>
+    tone-mapping="neutral"
+    shadow-intensity="1"
+    camera-orbit="-313.6deg 64.34deg 203.4m"
+    field-of-view="30deg"
+  >
 
-    <script src="script.js"></script>
-    <!-- Loads <model-viewer> for browsers: -->
-    <script
-      type="module"
-      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
-    ></script>
-  </body>
+    <!-- Hotspot 1 -->
+    <button
+      class="Hotspot"
+      slot="hotspot-1"
+      data-position="27.877334202030795m 8.477936522793685m 14.424716639085274m"
+      data-normal="0.7403671535727224m 0.4180025589490131m 0.5264317036641142m">
+      <div class="HotspotAnnotation">Tokyo Tower</div>
+    </button>
+
+    <!-- Hotspot 2 -->
+    <button
+      class="Hotspot"
+      slot="hotspot-2"
+      data-position="-22.91871596556782m 41.79060633790204m -15.339644252029276m"
+      data-normal="0.8219815992689937m -0.2399974095379485m 0.5164760341760901m">
+      <div class="HotspotAnnotation">
+        YORONIKU TOKYO AZABUDAI HILLS
+      </div>
+    </button>
+
+  </model-viewer>
+
+  <section class="attribution">
+    <h1>Tokyo Tower</h1>
+    <a href="https://immersivetechsolutions.co.uk/" target="_blank">
+      <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" />
+    </a>
+  </section>
+
+  <script
+    type="module"
+    src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
+  </script>
+
+</body>
 </html>
