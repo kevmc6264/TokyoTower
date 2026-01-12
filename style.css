@@ -1,33 +1,18 @@
-/* ============================
-   Global Styles
-============================ */
-
 body {
   margin: 0;
   padding: 1em;
-  font-family: "Roboto", "Noto Sans", Helvetica Neue, sans-serif;
-  color: #56585e;
-  background-color: transparent;
-  line-height: 1.6;
+  background: transparent;
   text-align: center;
 }
 
-/* ============================
-   Model Viewer Container
-============================ */
-
 model-viewer {
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
   height: 500px;
   margin: 0 auto;
 
-  background-color: transparent;
-  --poster-color: transparent;
+  background: transparent;
 
-  border-radius: 6px;
-
-  /* IMPORTANT: enable interaction */
   pointer-events: auto;
   touch-action: none;
 
@@ -36,120 +21,4 @@ model-viewer {
 
 model-viewer:active {
   cursor: grabbing;
-}
-
-/* ============================
-   Hotspot Styling
-============================ */
-
-.Hotspot {
-  background: #ffffff;
-  border-radius: 50%;
-  border: 3px solid rgba(102, 204, 255, 0.9);
-  box-shadow: 0 0 10px rgba(102, 204, 255, 0.7);
-  box-sizing: border-box;
-
-  width: 24px;
-  height: 24px;
-  padding: 6px;
-
-  cursor: pointer;
-  position: relative;
-
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.Hotspot:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(102, 204, 255, 1);
-}
-
-/* ============================
-   Hotspot Annotation Tooltip
-============================ */
-
-.HotspotAnnotation {
-  position: absolute;
-  top: 50%;
-  left: calc(100% + 10px);
-
-  transform: translateY(-50%);
-  white-space: nowrap;
-
-  background: #ffffff;
-  color: #56585e;
-
-  font-family: Futura, Helvetica Neue, sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-
-  padding: 0.4em 0.8em;
-  border-radius: 6px;
-
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-
-  opacity: 0;
-  visibility: hidden;
-
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  z-index: 10;
-}
-
-.Hotspot:hover .HotspotAnnotation {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(-50%) scale(1.05);
-}
-
-/* ============================
-   Attribution
-============================ */
-
-.attribution {
-  margin-top: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-
-.attribution h1 {
-  margin: 0;
-  font-size: 1.4em;
-  font-weight: 700;
-  color: #56585e;
-}
-
-.attribution img {
-  height: 1.8em;
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
-}
-
-.attribution img:hover {
-  opacity: 1;
-}
-
-/* ============================
-   Responsive Tweaks
-============================ */
-
-@media (max-width: 768px) {
-  model-viewer {
-    height: 420px;
-  }
-
-  .Hotspot {
-    width: 20px;
-    height: 20px;
-    padding: 4px;
-  }
-
-  .HotspotAnnotation {
-    font-size: 12px;
-  }
-
-  .attribution h1 {
-    font-size: 1.2em;
-  }
 }
