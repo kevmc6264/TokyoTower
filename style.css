@@ -174,3 +174,22 @@ footer p {
     font-size: 1.2em;
   }
 }
+
+/* ============================
+   Desktop Interaction Fix
+============================ */
+model-viewer {
+  touch-action: pan-y;
+  pointer-events: auto;
+  cursor: grab;
+}
+
+model-viewer:active {
+  cursor: grabbing;
+}
+
+/* Force poster to disappear once model loads */
+model-viewer::part(default-progress-bar) {
+  display: none;
+}
+
