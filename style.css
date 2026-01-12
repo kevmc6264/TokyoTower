@@ -1,169 +1,176 @@
-:not(:defined) > * {
-  display: none;
-}
-
-html {
-  height: 100%;
-}
-
+/* ============================
+   Global Styles
+============================ */
 body {
-  margin: 0;
+  margin: 1em;
   padding: 0;
-  width: 100%;
-  height: 100%;
+  font-family: "Roboto", "Noto Sans", Helvetica Neue, sans-serif;
+  color: #56585e; /* Updated text color */
+  background-color: transparent; /* No background */
+  line-height: 1.6;
+  text-align: center;
 }
 
+/* ============================
+   Card Container (Reduced Width)
+============================ */
+#card {
+  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px; /* Reduced width */
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  padding: 1.2em;
+  background-color: transparent; /* No background */
+}
+
+/* ============================
+   Model Viewer (Adjusted Width)
+============================ */
 model-viewer {
   width: 100%;
-  height: 90%;
-  background-color: #ffffff;
+  height: 500px; /* Adjusted to match new card width */
+  background-color: transparent; /* Removed white background */
+  --poster-color: transparent;
+  border-radius: 6px;
 }
 
+/* ============================
+   Hotspot Styling
+============================ */
 .Hotspot {
-  background: #fff;
-  border-radius: 32px;
-  border: 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  background: #ffffff;
+  border-radius: 50%;
+  border: 3px solid rgba(102, 204, 255, 0.9);
+  box-shadow: 0 0 10px rgba(102, 204, 255, 0.7);
   box-sizing: border-box;
   cursor: pointer;
-  height: 24px;
-  padding: 8px;
-  position: relative;
-  transition: opacity 0.3s;
   width: 24px;
+  height: 24px;
+  padding: 6px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
 }
 
-.Hotspot:not([data-visible]) {
-  background: transparent;
-  border: 4px solid #fff;
-  box-shadow: none;
-  height: 32px;
-  pointer-events: none;
-  width: 32px;
+/* Hotspot Hover Effect */
+.Hotspot:hover {
+  box-shadow: 0 0 15px rgba(102, 204, 255, 1);
+  transform: scale(1.1);
 }
 
-.Hotspot:focus {
-  border: 4px solid rgb(0, 128, 200);
-  height: 32px;
-  outline: none;
-  width: 32px;
-}
-
-.Hotspot > * {
-  opacity: 1;
-  transform: translateY(-50%);
-}
-
-.HotspotAnnotation{
-  background: #fff;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-  color: rgba(0, 0, 0, 0.8);
-  display: block;
+/* ============================
+   Hotspot Annotations (Tooltip)
+============================ */
+.HotspotAnnotation {
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  color: #56585e; /* Updated text color */
   font-family: Futura, Helvetica Neue, sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  left: calc(100% + 1em);
-  max-width: 128px;
-  overflow-wrap: break-word;
+  font-size: 14px;
+  font-weight: 600;
   padding: 0.5em 1em;
   position: absolute;
   top: 50%;
+  left: calc(100% + 10px);
   width: max-content;
-}
-
-.Hotspot:not([data-visible]) > * {
+  max-width: 180px;
   opacity: 0;
-  pointer-events: none;
-  transform: translateY(calc(-50% + 4px));
-  transition: transform 0.3s, opacity 0.3s;
-}
-
-
-.progress-bar {
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   display: block;
-  width: 33%;
-  height: 10%;
-  max-height: 2%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate3d(-50%, -50%, 0);
-  border-radius: 25px;
-  box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.5), 0px 0px 5px 1px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.progress-bar.hide {
   visibility: hidden;
-  transition: visibility 0.3s;
+  z-index: 10;
 }
 
-.update-bar {
-  background-color: rgba(255, 255, 255, 0.9);
-  width: 0%;
-  height: 100%;
-  border-radius: 25px;
-  float: left;
-  transition: width 0.3s;
+/* Show Annotation on Hover */
+.Hotspot:hover .HotspotAnnotation {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) scale(1.05);
 }
 
-#ar-button {
-  background-image: url(ar_icon.png);
-  background-repeat: no-repeat;
-  background-size: 20px 20px;
-  background-position: 12px 50%;
-  background-color: #fff;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  bottom: 16px;
-  padding: 0px 16px 0px 40px;
-  font-family: Roboto Regular, Helvetica Neue, sans-serif;
-  font-size: 14px;
-  color:#4285f4;
-  height: 36px;
-  line-height: 36px;
-  border-radius: 18px;
-  border: 1px solid #DADCE0;
+/* ============================
+   Attribution Section (Fixed Spacing & Updated Color)
+============================ */
+.attribution {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  gap: 5px;
 }
 
-#ar-button:active {
-  background-color: #E8EAED;
+.attribution h1 {
+  margin: 0;
+  font-size: 1.4em; /* Slightly smaller */
+  font-weight: 700;
+  color: #56585e; /* Updated text color */
 }
 
-#ar-button:focus {
-  outline: none;
+.attribution img {
+  opacity: 0.7;
+  height: 1.8em; /* Adjusted size */
+  transition: opacity 0.3s ease-in-out;
+  filter: grayscale(100%) brightness(40%); /* Makes CC icon match color */
 }
 
-#ar-button:focus-visible {
-  outline: 1px solid #4285f4;
+.attribution img:hover {
+  opacity: 1;
+  filter: grayscale(0%) brightness(100%);
 }
 
-@keyframes circle {
-  from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
-  to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
+/* ============================
+   Footer (Fixed Spacing & Updated Color)
+============================ */
+footer {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px; /* Match new card width */
+  margin: auto;
+  text-align: center;
+  font-style: normal;
+  line-height: 1.5em;
+  padding: 1em;
+  border-top: 1px solid #dddddd;
+  margin-top: 1em;
+  color: #56585e; /* Updated text color */
 }
 
-@keyframes elongate {
-  from { transform: translateX(100px); }
-  to   { transform: translateX(-100px); }
+/* Footer Text */
+footer p {
+  margin: 0.5em 0;
+  color: #56585e; /* Updated text color */
 }
 
-model-viewer > #ar-prompt {
-  position: absolute;
-  left: 50%;
-  bottom: 60px;
-  animation: elongate 2s infinite ease-in-out alternate;
-  display: none;
-}
+/* ============================
+   Responsive Design Tweaks
+============================ */
+@media (max-width: 768px) {
+  #card {
+    max-width: 90%; /* Makes it fit smaller screens */
+    padding: 1em;
+  }
 
-model-viewer[ar-status="session-started"] > #ar-prompt {
-  display: block;
-}
+  model-viewer {
+    height: 450px;
+  }
 
-model-viewer > #ar-prompt > img {
-  animation: circle 4s linear infinite;
+  .Hotspot {
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+  }
+
+  .HotspotAnnotation {
+    font-size: 12px;
+    max-width: 160px;
+  }
+
+  .attribution h1 {
+    font-size: 1.2em;
+  }
 }
