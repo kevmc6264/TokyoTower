@@ -1,32 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Tokyo Tower – AR Model Viewer</title>
+    <title>&lt;model-viewer&gt; example</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta charset="utf-8">
-    <meta name="description" content="Tokyo Tower interactive 3D and AR model">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css" />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="./style.css">
+    <!-- The following libraries and polyfills are recommended to maximise browser support -->
+    <!-- NOTE: you must adjust the paths as appropriate for your project -->
 
-    <!-- Prevent browser gesture conflicts -->
-    <style>
-      model-viewer {
-        pointer-events: auto;
-        cursor: grab;
-      }
-      model-viewer:active {
-        cursor: grabbing;
-      }
-    </style>
+    <!-- 💁 OPTIONAL: The:focus-visible polyfill removes the focus ring for some input types -->
+    <script
+      src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js"
+      defer
+    ></script>
   </head>
-
   <body>
 
     <model-viewer
       src="https://pub-c133242e36144d14be3d01d2b0f26964.r2.dev/Tokyo_Tower.glb"
-      ios-src="https://pub-c133242e36144d14be3d01d2b0f26964.r2.dev/TokyoTower.usdc"
+
       poster="https://pub-c133242e36144d14be3d01d2b0f26964.r2.dev/Tokyo.jpeg"
       alt="Tokyo Tower 3D model"
       ar-modes="scene-viewer webxr quick-look"
