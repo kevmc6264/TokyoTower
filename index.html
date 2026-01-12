@@ -2,34 +2,51 @@
 <html lang="en">
   <head>
     <title>Tokyo Tower – AR Model Viewer</title>
+
     <meta charset="utf-8">
-    <meta name="description" content="Tokyo Tower AR model viewer">
+    <meta name="description" content="Tokyo Tower interactive 3D and AR model">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Styles -->
     <link rel="stylesheet" href="./style.css">
+
+    <!-- Prevent browser gesture conflicts -->
+    <style>
+      model-viewer {
+        pointer-events: auto;
+        cursor: grab;
+      }
+      model-viewer:active {
+        cursor: grabbing;
+      }
+    </style>
   </head>
 
   <body>
+
     <model-viewer
       src="https://pub-c133242e36144d14be3d01d2b0f26964.r2.dev/Tokyo_Tower.glb"
       ios-src="https://pub-c133242e36144d14be3d01d2b0f26964.r2.dev/TokyoTower.usdc"
       poster="https://pub-c133242e36144d14be3d01d2b0f26964.r2.dev/Tokyo.jpeg"
+      alt="Tokyo Tower 3D model"
+
+      camera-controls
+      auto-rotate
+      auto-rotate-delay="0"
+
       ar
       ar-modes="webxr scene-viewer quick-look"
-      camera-controls
+
       tone-mapping="neutral"
       shadow-intensity="1"
-      camera-orbit="-2.551deg 50.62deg 203.4m"
-      field-of-view="30deg"
-      auto-rotate>
+      interaction-prompt="auto">
 
       <!-- Hotspot 1 -->
       <button
         class="Hotspot"
         slot="hotspot-1"
         data-position="27.877334202030795m 8.477936522793685m 14.424716639085274m"
-        data-normal="0.7403671535727224m 0.4180025589490131m 0.5264317036641142m"
-        data-visibility-attribute="visible">
+        data-normal="0.7403671535727224m 0.4180025589490131m 0.5264317036641142m">
         <div class="HotspotAnnotation">Tokyo Tower</div>
       </button>
 
@@ -38,8 +55,7 @@
         class="Hotspot"
         slot="hotspot-2"
         data-position="-22.91871596556782m 41.79060633790204m -15.339644252029276m"
-        data-normal="0.8219815992689937m -0.2399974095379485m 0.5164760341760901m"
-        data-visibility-attribute="visible">
+        data-normal="0.8219815992689937m -0.2399974095379485m 0.5164760341760901m">
         <div class="HotspotAnnotation">YORONIKU TOKYO AZABUDAI HILLS</div>
       </button>
 
@@ -53,19 +69,13 @@
         View in your space
       </button>
 
-      <!-- AR prompt -->
-      <div id="ar-prompt">
-        <img src="ar_hand_prompt.png" alt="AR prompt">
-      </div>
-
     </model-viewer>
-
-    <script src="script.js"></script>
 
     <!-- model-viewer library -->
     <script
       type="module"
       src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
     </script>
+
   </body>
 </html>
